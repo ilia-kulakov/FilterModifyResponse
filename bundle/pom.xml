@@ -112,7 +112,6 @@
                 <configuration>
                     <instructions>
                         <Bundle-SymbolicName>edu.aem.training.filtermodifyresponse-bundle</Bundle-SymbolicName>
-                        <Bundle-Activator>edu.aem.training.filtermodifyresponse.impl.TrainingBundleActivator</Bundle-Activator>
 
                         <Embed-Transitive>true</Embed-Transitive>
                         <Embed-Dependency>org.apache.sling.commons.osgi;scope=compile</Embed-Dependency>

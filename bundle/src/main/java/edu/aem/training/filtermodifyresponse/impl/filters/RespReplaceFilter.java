@@ -36,7 +36,10 @@ public class RespReplaceFilter implements Filter {
         chain.doFilter(request, capturingResponseWrapper);
 
         if (response.getContentType() != null
-                && response.getContentType().contains("text/html")) {
+                && (
+                        response.getContentType().contains("text/html") ||
+                        response.getContentType().contains("application/json")
+                    )) {
 
             String content = capturingResponseWrapper.getContents();
 
