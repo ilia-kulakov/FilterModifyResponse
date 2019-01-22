@@ -1,7 +1,20 @@
 Filter Modify Response: AEM 6.1
 ========
 
+Create a configurable Sling filter that looks through HTML and JSON responses that contain Geometrixx website pages
+and replaces the company name. The filter must replace “Geometrixx” word in the responses depending on the run mode
+
 This a content package project generated using the multimodule-content-package-archetype.
+
+Run mode        What to replace     Replacement
+
+“algebra”       Geometrixx          Algebraixx
+
+“trigo”         Geometrixx          Trigonometrixx
+
+<default (no    Geometrixx          Geometrio, LLC
+specific
+runmode)>
 
 Building
 --------

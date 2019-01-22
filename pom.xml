@@ -104,6 +104,14 @@
                 <scope>provided</scope>
             </dependency>
 
+            <!-- https://mvnrepository.com/artifact/com.adobe.acs/acs-aem-commons -->
+            <dependency>
+                <groupId>com.adobe.acs</groupId>
+                <artifactId>acs-aem-commons</artifactId>
+                <version>3.19.0</version>
+                <type>pom</type>
+            </dependency>
+
             <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>

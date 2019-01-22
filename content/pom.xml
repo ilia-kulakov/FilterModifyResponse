@@ -25,6 +25,13 @@
             <artifactId>filtermodifyresponse-bundle</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.adobe.acs</groupId>
+            <artifactId>acs-aem-commons-content</artifactId>
+            <version>2.14.0</version>
+            <type>content-package</type>
+            <classifier>min</classifier> <!-- optional, see below -->
+        </dependency>
     </dependencies>
     <build>
         <resources>
@@ -62,6 +69,15 @@
                         </embedded>
                     </embeddeds>
                     <targetURL>http://${crx.host}:${crx.port}/crx/packmgr/service.jsp</targetURL>
+
+                    <subPackages>
+                        <subPackage>
+                            <groupId>com.adobe.acs</groupId>
+                            <artifactId>acs-aem-commons-content</artifactId>
+                            <filter>true</filter>
+                        </subPackage>
+                    </subPackages>
+
                 </configuration>
             </plugin>
         </plugins>
@@ -103,7 +119,7 @@
                                 </goals>
                                 <configuration>
                                     <targetURL>http://${publish.crx.host}:${publish.crx.port}/crx/packmgr/service.jsp</targetURL>
-                                    <username>${publish.crx.username}</username>
+                                    <userId>${publish.crx.username}</userId>
                                     <password>${publish.crx.password}</password>
                                 </configuration>
                             </execution>

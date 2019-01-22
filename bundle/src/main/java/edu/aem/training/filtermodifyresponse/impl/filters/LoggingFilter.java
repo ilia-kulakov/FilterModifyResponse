@@ -10,8 +10,6 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 
 import org.apache.felix.scr.annotations.Component;
-import org.apache.felix.scr.annotations.Properties;
-import org.apache.felix.scr.annotations.Property;
 import org.apache.felix.scr.annotations.sling.SlingFilter;
 import org.apache.felix.scr.annotations.sling.SlingFilterScope;
 import org.apache.sling.api.SlingHttpServletRequest;
@@ -19,14 +17,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Simple servlet filter component that logs incoming requests.
- */
-@SlingFilter(generateComponent = true, generateService = true, order = -700, scope = SlingFilterScope.COMPONENT)
-@Properties({
-        @Property(name="sling.filter.pattern", value="/content/geometrixx/.*", propertyPrivate=false)
-})
+* Simple servlet filter component that logs incoming requests.
+*/
+@SlingFilter(generateComponent = false, generateService = true, order = -700, scope = SlingFilterScope.REQUEST)
+@Component(immediate = true, metatype = false)
 public class LoggingFilter implements Filter {
-
+    
     private Logger logger = LoggerFactory.getLogger(LoggingFilter.class);
 
     public void init(FilterConfig filterConfig) throws ServletException {
